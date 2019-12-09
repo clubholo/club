@@ -101,7 +101,7 @@ export class CreateNewEventComponent implements OnInit {
     });
 
     this.eventDate.setDate(this.dateNow.getDate() + 7);
-    this.maxRegistrationDate.setDate(this.eventDate.getDate());
+
   }
 
   changeEventDate(event) {
@@ -111,6 +111,7 @@ export class CreateNewEventComponent implements OnInit {
   ngOnInit() {
     const event: Event = this.data.event;
     this.apiZipValue = event.address.city;
+    this.maxRegistrationDate = new Date(event.dateStart);
 
     this.firstFormGroup = this._formBuilder.group({
       eventName: [event.name, Validators.required],
@@ -135,7 +136,7 @@ export class CreateNewEventComponent implements OnInit {
       eventStartTime: [event.timeStart || '18:00', Validators.required],
       eventEndTime: [event.timeEnd || '22:00', Validators.required],
       eventDeadlineDate: [new Date(event.deadlineDate) || this.maxRegistrationDate, Validators.required],
-      eventDeadlineTime: [event.deadlineTime || '00:00', Validators.required]
+      eventDeadlineTime: [event.deadlineTime || event.timeStart || '23:59']
     });
     this.fourthFormGroup = this._formBuilder.group({
       eventPrice: [event.price || '', [Validators.required, Validators.max(100000)]],
@@ -194,9 +195,10 @@ export class CreateNewEventComponent implements OnInit {
     }
   }
 
-  onSubmitEvent() {
+  onSubmitEvent(eventType:string = 'save') {
     let observer = this.ufbs.getUserByID(this.authService.afAuth.auth.currentUser.uid).subscribe((userSnapshot: any) => {
       let e: Event = this.formDataToModel(userSnapshot);
+      e.published = (eventType == 'publish');
       if (!this.data.eventKey) {
         this.efbs.insertEvent(e).then((thenableRef) => {
           let key = thenableRef.key;
@@ -213,7 +215,7 @@ export class CreateNewEventComponent implements OnInit {
 
     this.eventData.name = (newData.eventName !== undefined) ? newData.eventName : this.eventData.name;
     this.eventData.address = new EventAddress(newData.eventLocationStreet,
-      this.apiZipValue, newData.eventLocationZip);
+    this.apiZipValue, newData.eventLocationZip);
     this.eventData.category = (newData.eventCategory !== undefined) ? newData.eventCategory : this.eventData.category;
     this.eventData.description = (newData.eventDescription !== undefined) ? newData.eventDescription : this.eventData.description;
     this.eventData.geoCoord = (newData.geoCoord !== undefined) ? newData.geoCoord : this.eventData.geoCoord;

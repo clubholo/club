@@ -18,12 +18,14 @@ export class EditEventControlsComponent implements OnInit {
   @Output() submit = new EventEmitter();
 
   isMobile = false;
+  SaveText = "Gem kladde";
 
   constructor(
     private md: MobileDetectorService, 
   ) {}
   
   ngOnInit() {
+    if (this.isLast) this.SaveText = "Publicer";
     this.isMobile = this.md.check();
   }
 

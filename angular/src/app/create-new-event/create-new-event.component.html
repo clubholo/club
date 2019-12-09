@@ -167,7 +167,7 @@
 
           <mat-form-field class="field">
             <mat-label>Tid</mat-label>
-            <input matInput type="time" formControlName="eventDeadlineTime" required>
+            <input matInput type="time" formControlName="eventDeadlineTime">
           </mat-form-field>
 
         </div>
@@ -222,7 +222,8 @@
           </mat-form-field>
 
           <label
-            *ngIf="fourthFormGroup.value.eventPaymentOption == 'Bankoverførelse'">Kontonummer</label>
+            *ngIf="fourthFormGroup.value.eventPaymentOption == 'Bankoverførelse'">Kontonummer
+          </label>
           <br>
           <mat-form-field
             *ngIf="fourthFormGroup.value.eventPaymentOption == 'Bankoverførelse'">
@@ -263,7 +264,7 @@
           <p>{{preview.body}}</p>
         </div>
       </mat-card>
-      <edit-event-controls [isValid]="true" [isLast]="true" (cancel)="onNoClick()" (submit)="onSubmitEvent()">
+      <edit-event-controls [isValid]="true" [isLast]="true" (cancel)="onNoClick()" (submit)="onSubmitEvent('publish')">
       </edit-event-controls>
     </mat-step>
   </mat-horizontal-stepper>

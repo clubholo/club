@@ -1,7 +1,7 @@
 <div class="controls" *ngIf="!isMobile">
   <button class="prev" mat-raised-button matStepperPrevious [disabled]="!isValid || isFirst">Tilbage</button>
   <button class="canc" (click)="onCancel()" mat-raised-button color="warn">Fortryd</button>
-  <button class="save" (click)="onSubmit()" mat-raised-button color="primary" [disabled]="!isValid">Gem kladde</button>
+  <button class="save" (click)="onSubmit()" mat-raised-button color="primary" [disabled]="!isValid">{{SaveText}}</button>
   <button class="next" mat-raised-button matStepperNext [disabled]="!isValid || isLast">Næste</button>
 </div>
 
