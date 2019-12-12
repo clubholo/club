@@ -60,6 +60,8 @@ export class EventListComponent implements OnInit {
   subscription: Subscription;
   filterValue: any;
 
+  
+
   constructor(
     private ufbs: UserFirebaseService,
     private authService: AuthService,
