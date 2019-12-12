@@ -185,7 +185,6 @@ export class EventListComponent implements OnInit {
   }
 
   showPastEvents(isPastShown: boolean) {
-    console.log('lilili')
     let myEvents;
     const userId = this.authService.afAuth.auth.currentUser.uid;
     if (isPastShown) {
