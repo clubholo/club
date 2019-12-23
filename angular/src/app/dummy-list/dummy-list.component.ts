@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // Firebase
 import { AngularFireDatabase } from '@angular/fire/database'; 
 import { Observable } from 'rxjs/Observable';
+import { EventFirebaseService } from '../event-firebase.service';
 
 @Component({
   selector: 'dummy-list',
@@ -12,10 +13,13 @@ export class DummyListComponent implements OnInit {
   eventsObservable: Observable<any[]>;
   events: any[];
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(
+    private db: AngularFireDatabase,
+    private efbs: EventFirebaseService,
+    ) { }
 
   ngOnInit() {
-    this.eventsObservable = this.getDummy('/events');
+    this.eventsObservable = this.efbs.getList();
   }
 
   getDummy(listPath): Observable<any[]> {

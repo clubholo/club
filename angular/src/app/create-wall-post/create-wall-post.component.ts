@@ -15,7 +15,7 @@ export class CreateWallPostComponent implements OnInit {
 
   wallPostForm: FormGroup;
 
-  constructor(public dialogRef: MatDialogRef<ViewEventComponent>,
+  constructor(public dialogRef: MatDialogRef<CreateWallPostComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, 
     private _formBuilder: FormBuilder, private ws: WallService, 
     private authService: AuthService, private ufbs: UserFirebaseService) { }

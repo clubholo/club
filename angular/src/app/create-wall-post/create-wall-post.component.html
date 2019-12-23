@@ -1,7 +1,8 @@
 
   <form [formGroup]="wallPostForm">
     <mat-form-field>
-      <input formControlName="message" matInput placeholder="Besked">
+      <input formControlName="message" matInput placeholder="Besked" required>
     </mat-form-field>
   </form>
-  <button (click)="insertWallPost(wallPostForm.value)" mat-raised-button color="primary">Svar</button>
+  <button (click)="onNoClick()" mat-raised-button>Fortryd</button>
+  <button (click)="insertWallPost(wallPostForm.value)" type="submit" [disabled]="wallPostForm.invalid" mat-raised-button color="primary">Svar</button>

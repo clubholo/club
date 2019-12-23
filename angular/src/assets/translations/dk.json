@@ -87,7 +87,7 @@
         },
         "COMMUNITY_SECTION": {
           "TITLE": "Fællesskab",
-          "CONTENT": "<p>En del af vores koncept er selv at arrangere en hel del events, ikke kun i opstartsfasen, men også fremover. Derudover håber vi på, at mange af jer har lyst til at bidrage til netværket ved at oprette events med spændende alsidige temaer og gode oplevelser til følge.</p>"
+          "CONTENT": "<p>En del af vores koncept er, at vi selv arrangerer en hel del events, ikke kun i opstartsfasen, men også fremover. Derudover håber vi på, at mange af jer har lyst til at bidrage til netværket ved at oprette events med spændende alsidige temaer og gode oplevelser til følge.</p>"
         },
         "TRANSPARENCY_SECTION": {
           "TITLE": "Gennemsigtighed",
@@ -253,7 +253,7 @@
     "NEW_EVENT": {
       "WHAT_AND_WHERE_STEP": {
         "TITLE": "Opret nyt event",
-        "DESCRIPTION": "Du må oprette en event med <b>3 enkle trin</b> og fortælle dine gæster, hvad er eventen om, hvornår og hvor den vil bliveafholdt.<br><br>Du kan udfylde alle detaljer nu eller oprette eventen og vende tilbage for at udfylde resten af detaljerne.",
+        "DESCRIPTION": "Du må oprette en event med <b>3 enkle trin</b> og fortælle dine gæster, hvad er eventen om, hvornår og hvor den vil blive afholdt.<br><br>Du kan udfylde alle detaljer nu eller oprette eventen og vende tilbage for at udfylde resten af detaljerne.",
         "NAME_LABEL": "Titel",
         "DESCRIPTION_LABEL": "Beskrivelse",
         "DESCRIPTION_TOOLTIP": "Du kan trække nede i højre hjørne for at forstørre tekstfeltet",

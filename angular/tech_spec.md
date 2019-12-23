@@ -1,6 +1,6 @@
-# Single Netværket Tech Spec
+# SingleNetværket Tech Spec
 
-Dette Git dokument indeholder detaljer omkring udviklingen af web app (projekt: Single Netværket). Specifikation af teknologier anvendt bl.a.
+Dette Git dokument indeholder detaljer omkring udviklingen af web app (projekt: SingleNetværket). Specifikation af teknologier anvendt bl.a.
 
 
 ## Product backlog

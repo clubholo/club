@@ -4,8 +4,8 @@
       <div class="col">
         <mat-card *ngIf="selectedEvent.name !== undefined">
           <button *ngIf="isHost" (click)="editEvent()" mat-raised-button color="primary">Rediger</button>
-          <button *ngIf="isHost && !selectedEvent.published" (click)="publishEvent()" mat-raised-button color="primary">Opret event</button>
-          <span *ngIf="isHost && selectedEvent.published" (click)="publishEvent()" class="published-text">pubished</span>
+          <button *ngIf="isHost && !selectedEvent.published" (click)="publishEvent()" mat-raised-button color="primary">Publicer</button>
+          <span *ngIf="isHost && selectedEvent.published" (click)="publishEvent()" class="published-text">Publiceret</span>
           <mat-card-title>{{selectedEvent.name}}
             <mat-chip-list>
               <mat-chip color="primary" selected>
@@ -92,19 +92,15 @@
           </mat-card-title>
 
           <div *ngFor="let post of wall.posts">
-            <mat-card>
               <mat-card-title>
                 <img class="wall-img round" src="/assets/images/Logo.png">
                 <a routerLink="/view-profile/">{{post.username}}</a>
-                <p class="wall-timedate">{{tempDate}}</p>
+                <p class="wall-timedate">{{post.creationDate | date: 'short'}}</p>
+                <div
+                  *ngIf="post.fk_id === this.authService.afAuth.auth.currentUser.uid || this.selectedEvent.host === this.authService.afAuth.auth.currentUser.uid"
+                  (click)="deleteWallPost(post)" class="delete-button fa fa-trash"></div>
               </mat-card-title>
               <mat-card-content>{{post.message}}</mat-card-content>
-              <mat-card-actions>
-                <button
-                  *ngIf="post.fk_id === this.authService.afAuth.auth.currentUser.uid || this.selectedEvent.host === this.authService.afAuth.auth.currentUser.uid"
-                  (click)="deleteWallPost(post)" mat-button color="warn">Slet</button>
-              </mat-card-actions>
-            </mat-card>
           </div>
 
           <div *ngIf="wallIsEmpty">
@@ -151,7 +147,7 @@
         <span class="date">{{selectedEvent.dateStart | date:'EEEE, MMMM d, y' }}</span>
         <button *ngIf="isHost" (click)="editEvent()" mat-raised-button color="primary" class=" fa fa-pencil"></button>
         <button *ngIf="isHost && !selectedEvent.published" (click)="publishEvent()" mat-raised-button color="primary" class=" fa fa-paper-plane"></button>
-        <span *ngIf="isHost && selectedEvent.published" (click)="publishEvent()" class="published-text">pubished</span>
+        <span *ngIf="isHost && selectedEvent.published" (click)="publishEvent()" class="published-text">Publiceret</span>
     </div>
     <div class="title">{{selectedEvent.name}}</div>
     <mat-card-subtitle>
@@ -218,7 +214,7 @@
     <mat-card-title>
       <img class="wall-img round" src="../../singlenetwork/assets/images/Logo.png">
       <a routerLink="/view-profile/">{{userNames[idx]}}</a>
-      <p class="wall-timedate">{{tempDate}}</p>
+      <p class="wall-timedate">{{tempDate | date: 'short'}}</p>
     </mat-card-title>
     <mat-card-content>{{post.message}}</mat-card-content>
     <mat-card-actions>

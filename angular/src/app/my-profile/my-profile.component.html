@@ -155,14 +155,11 @@
         </mat-form-field>
         <button *ngIf="usernameValidation" (click)="deleteAccount()" mat-raised-button color="warn">Slet
           profil</button>
-
-
       </form>
-
 
       <mat-list>
         <mat-list-item>
-          <label>Rating:</label> <strong>{{userRating}} </strong>
+          <label>Rating:</label> <strong>{{userRating.toFixed(1)}} </strong>
           <mat-icon color="primary">star</mat-icon>
         </mat-list-item>
         <mat-list-item>
@@ -179,7 +176,7 @@
         <mat-list-item>
           <label>Medlemskab er betalt til og med</label>
           <mat-chip-list>
-            <mat-chip selected color="primary"> {{paidUntil | date:'short'}}</mat-chip>
+            <mat-chip selected color="primary"> {{paidUntil | date:'dd/mm/yyyy'}}</mat-chip>
           </mat-chip-list>
         </mat-list-item>
       </mat-list>

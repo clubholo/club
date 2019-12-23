@@ -36,6 +36,7 @@ export class WallService {
   }
 
   insertPost(postsObj, key) {
+    postsObj.creationDate = new Date().getTime();
     this.db.list(this.dbPath+key+"/posts/").push(postsObj);
   }
 

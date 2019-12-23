@@ -295,6 +295,7 @@ export class ViewEventComponent implements OnInit {
         let wall: any = wallSnapshot[0];
         this.wallKey = wall.key;
         if (wall.posts) {
+          console.log('p', wall.posts)
           Object.keys(wall.posts).forEach(key => {
             const wallPostObj = wall.posts[key];
             let observerFour = this.ufbs.getUserByID(wallPostObj.fk_id).subscribe( (userSnapshot:any) => {

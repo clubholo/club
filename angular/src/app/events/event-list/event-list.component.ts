@@ -60,6 +60,8 @@ export class EventListComponent implements OnInit {
   subscription: Subscription;
   filterValue: any;
 
+  
+
   constructor(
     private ufbs: UserFirebaseService,
     private authService: AuthService,
@@ -183,7 +185,6 @@ export class EventListComponent implements OnInit {
   }
 
   showPastEvents(isPastShown: boolean) {
-    console.log('lilili')
     let myEvents;
     const userId = this.authService.afAuth.auth.currentUser.uid;
     if (isPastShown) {
