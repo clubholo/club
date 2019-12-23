@@ -29,6 +29,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { RateEventComponent } from './rate-event/rate-event.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { PaymentComponent } from './payment/payment.component';
+import { WebinarsComponent } from './webinars/webinars.component';
 import { PricesComponent } from './prices/prices.component';
 import { CreateNewEventComponent } from './create-new-event/create-new-event.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
@@ -198,6 +199,7 @@ export class AppDateAdapter extends NativeDateAdapter {
     MobileLoginHeaderComponent,
     MyEventsComponent,
     PaymentComponent,
+    WebinarsComponent,
     PricesComponent,
     MyEventComponent,
     PatchNotesComponent,

@@ -24,6 +24,7 @@ export class AppNavbarComponent implements OnInit {
   user$;
 
   menuFields = [
+    {'displayName' : "webinars", 'link' : "/webinars", 'description': "Join webinars!", "selected": false},
     {'displayName' : "events", 'link' : "/events", 'description': "Listen over bruger events. Find dit næste event!", "selected": false},
     // {'displayName' : "min profil", 'link' : "/my-profile", 'description': "Opdater din profil og se status"},
     {'displayName' : "betaling", 'link' : "/payment", 'description': "Til betalingsgateway hvor du kan styre dit abonnement", "selected": false},

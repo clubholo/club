@@ -28,6 +28,7 @@ import { AttendedEventsComponent } from './attended-events/attended-events.compo
 import { AttendingEventsComponent } from './attending-events/attending-events.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { WebinarsComponent } from './webinars/webinars.component';
 
 const routes: Routes = [
   { path: 'landing-page', component: LandingPageComponent},
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'my-events', component: MyEventsComponent, canActivate: [AuthGuard] },
   { path: 'prices', component: PricesComponent},
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'webinars', component: WebinarsComponent, canActivate: [AuthGuard] },
   { path: 'my-event', component: MyEventComponent, canActivate: [AuthGuard] },
   { path: 'patch-notes', component: PatchNotesComponent, canActivate: [AuthGuard] },
   { path: 'view-event', component: ViewEventComponent, canActivate: [AuthGuard] },
