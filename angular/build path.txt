@@ -1,6 +1,6 @@
-ng build --base-href=/singlenetwork/
+ng build --base-href=/clubholo/
 
 or 
 
 POSSIBLY NEW
-ng build --base-href=/singlenetwork/angular/
+ng build --base-href=/clubholo/angular/

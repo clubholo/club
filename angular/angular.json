@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "singlenetwork": {
+    "clubholo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/singlenetwork",
+            "outputPath": "dist/clubholo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -60,21 +60,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "singlenetwork:build"
+            "browserTarget": "clubholo:build"
           },
           "configurations": {
             "development": {
-              "browserTarget": "singlenetwork:build:development"
+              "browserTarget": "clubholo:build:development"
             },
             "production": {
-              "browserTarget": "singlenetwork:build:production"
+              "browserTarget": "clubholo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "singlenetwork:build"
+            "browserTarget": "clubholo:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "singlenetwork-e2e": {
+    "clubholo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "singlenetwork:serve"
+            "devServerTarget": "clubholo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "singlenetwork:serve:production"
+              "devServerTarget": "clubholo:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "singlenetwork"
+  "defaultProject": "clubholo"
 }

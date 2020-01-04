@@ -1,6 +1,6 @@
 {
   "COMPANY_DETAILS": {
-    "NAME": "Holopedia Club IVS",
+    "NAME": "Club Holo",
     "CVR": {
       "TEXT": "CVR",
       "VALUE": "39557150"
@@ -22,9 +22,9 @@
   },
   "PAGES": {
     "HOME": {
-      "TITLE": "Holopedia Club",
-      "SUBTITLE": "Quantum Holopedia",
-      "JOIN_SITE": "Join Holopedia Club"
+      "TITLE": "Club Holo",
+      "SUBTITLE": "Holo Happy Life",
+      "JOIN_SITE": "Join Club Holo"
     },
     "MY_PROIFLE": {
       "TITLE": "Min Profil",
@@ -347,7 +347,7 @@
       "CREATE_USER": "Create a user"
     },
     "SIGNUP": {
-      "TITLE": "Holopedia Club",
+      "TITLE": "Club Holo",
       "CONFIRM_BUTTON": "Create a user",
       "REPEAT_PASSWORD": "Repeat Password"
     },

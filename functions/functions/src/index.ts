@@ -153,7 +153,7 @@ export const afterEventHostMail = functions.https.onRequest(async (request, resp
                         getNumberOfEvents(users[users.indexOf(snapshot.key)]).then(numEvents => {
                             getUserScore(users[users.indexOf(snapshot.key)]).then(userScore => {
                                 const mailOptions = {
-                                    from: `${APP_NAME} <singlenetworkdatabase@gmail.com>`,
+                                    from: `${APP_NAME} <clubholodatabase@gmail.com>`,
                                     to: 'info@singlen.dk', //snapshot.val().email
                                     subject: `Tak for afholdelse af eventet`,
                                     text: `Kære ${snapshot.val().username},
@@ -487,7 +487,7 @@ function sendEmail(mailOptions: {}, request=undefined, response=undefined) {
     var nodemailer = require("nodemailer");
     // create reusable transport method (opens pool of SMTP connections)
     var smtpTransport = nodemailer.createTransport(
-        "smtps://singlenetworkdatabase%40gmail.com:"+encodeURIComponent('sn1337DK') + "@smtp.gmail.com:465"
+        "smtps://clubholodatabase%40gmail.com:"+encodeURIComponent('sn1337DK') + "@smtp.gmail.com:465"
         );
 
     smtpTransport.sendMail(mailOptions).then( (res) => {
